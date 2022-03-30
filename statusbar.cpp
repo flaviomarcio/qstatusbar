@@ -26,7 +26,7 @@
 QColor StatusBarPrivate::color;
 StatusBar::Theme StatusBarPrivate::theme = StatusBar::Light;
 
-StatusBar::StatusBar(QObject *parent) : QObject(parent)
+StatusBar::StatusBar(QObject *parent) : QObject{parent}
 {
 }
 
