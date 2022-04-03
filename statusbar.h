@@ -30,8 +30,8 @@ class StatusBar : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(bool available READ isAvailable CONSTANT)
-    Q_PROPERTY(QColor color READ color WRITE setColor)
-    Q_PROPERTY(Theme theme READ theme WRITE setTheme)
+    Q_PROPERTY(QColor color READ color WRITE setColor NOTIFY colorChanged)
+    Q_PROPERTY(Theme theme READ theme WRITE setTheme NOTIFY themeChanged)
 
 public:
     explicit StatusBar(QObject *parent = nullptr);
@@ -46,6 +46,9 @@ public:
 
     static Theme theme();
     static void setTheme(Theme theme);
+signals:
+    void colorChanged();
+    void themeChanged();
 };
 
 #endif // STATUSBAR_H
